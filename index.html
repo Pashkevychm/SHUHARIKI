@@ -14,7 +14,7 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg" data-bs-theme="'dark">
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Aloshechka</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -26,8 +26,8 @@
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="#">Дім</a>
                         <a class="nav-link" href="hu.html">Кошик</a>
-                        <a class="nav-link" href="#">---</a>
-                        <a class="nav-link disabled" aria-disabled="true">Pro nas</a>
+                        <a class="nav-link" href="#">Про нас</a>
+                        <a class="nav-link">Контакти</a>
                     </div>
                 </div>
             </div>
@@ -35,50 +35,69 @@
     </header>
 
     <main class="container">
-        <div class="container text-center mt-5">
-            <h1>Welcom y magazini Sympel</h1>
-            <p>Ti kypish za deshevo novi igri</p>
-        </div>
         <section id='about'>
-            <div class="product-card">
-                <h2>Наші товари</h2>
-                <div class="products-div">
-                    <article class="product" data-category="game">
-                        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS17I0ENNW-P8FjmJZsg-AfnKmm2uqG5oCMKA&s' alt="Game 1" class="product-img">
-                        <div>
-                            <h3>Minecraft</h3>
-                            <p>Продається ліцензія на Minecraft</p>
-                            <span class="price"> £ 13.37</span>
-                            <button class="buy-button btn btn-primary">Бегом до кошика</button>
-                        </div>
-                    </article>
-                    <article class="product" data-category="game">
-                        <img src='Igm\fifa26.jpg' alt="Game 2" class="product-img">
-                        <div>
-                            <h3>Товар 2</h3>
-                            <p>Продається ліцензія на FIFA 26</p>
-                            <span class="price"> £ 29.99</span>
-                            <button class="buy-button btn btn-primary">Бегом до кошика</button>
-                        </div>
-                    </article>
-                    <article class="product" data-category="game">
-                        <img src='Igm\S.T.A.L.K.E.R.2.png' alt="Game 3" class="product-img">
-                        <div>
-                            <h3>S.T.A.L.K.E.R.2.</h3>
-                            <p>Продається гра S.T.A.L.K.E.R.2.</p>
-                            <span class="price"> £ 18.67</span>
-                            <button class="buy-button
-                            btn btn-primary">Бегом до кошика</button>
-                        </div>
-                    </article>
+            <h1>Ласкаво просимо в магазин Simple</h1>
+            <p>Купуй ліцензійні ігри за дешеві ціни!</p>
+        </section>
+        <section id='products'>
+            <h2>Наші товари</h2>
 
-            </div>
+            <div class="products-div">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button class="filter-button btn btn-secondary active" data-category="all">Всі</button>
+                    <button class="filter-button btn btn-secondary" data-category="game">Ігри</button>
+                    <button class="filter-button btn btn-secondary" data-category="donate">Донат</button>
                 </div>
+                <article class="product" data-category="game">
+                    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS17I0ENNW-P8FjmJZsg-AfnKmm2uqG5oCMKA&s' alt="Game 1" class="product-img">
+                    <div>
+                        <h3>Minecraft</h3>
+                        <p>Продається ліцензія на Minecraft</p>
+                        <span class="price">£ 13.37</span>
+                        <button class="buy-button btn btn-primary">Бегом до кошика</button>
+                    </div>
+                </article>
+                <article class="product" data-category="game">
+                    <img src='Igm/fifa26.jpg' alt="Game 2" class="product-img">
+                    <div>
+                        <h3>FIFA 26</h3>
+                        <p>Продається ліцензія на FIFA 26</p>
+                        <span class="price">£ 29.99</span>
+                        <button class="buy-button btn btn-primary">Бегом до кошика</button>
+                    </div>
+                </article>
+                <article class="product" data-category="game">
+                    <img src='Igm/S.T.A.L.K.E.R.2.png' alt="Game 3" class="product-img">
+                    <div>
+                        <h3>S.T.A.L.K.E.R.2.</h3>
+                        <p>Продається гра S.T.A.L.K.E.R.2.</p>
+                        <span class="price">£ 18.67</span>
+                        <button class="buy-button btn btn-primary">Бегом до кошика</button>
+                    </div>
+                </article>
+                <article class="product" data-category="donate">
+                    <img src='https://via.placeholder.com/200' alt="Donate 1" class="product-img">
+                    <div>
+                        <h3>Донат пакет 5£</h3>
+                        <p>Поддержите разработку игр</p>
+                        <span class="price">£ 5.00</span>
+                        <button class="buy-button btn btn-primary">Бегом до кошика</button>
+                    </div>
+                </article>
+                <article class="product" data-category="donate">
+                    <img src='https://via.placeholder.com/200' alt="Donate 2" class="product-img">
+                    <div>
+                        <h3>Донат пакет 10£</h3>
+                        <p>Поддержите разработку игр</p>
+                        <span class="price">£ 10.00</span>
+                        <button class="buy-button btn btn-primary">Бегом до кошика</button>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
 
-    <script src="ja/script.js"></script>
+    <script src="js/script.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js'></script>
 
 </body>

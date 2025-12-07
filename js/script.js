@@ -1,22 +1,46 @@
 let products = [
+    
     {
-
-    id: 1,
-    name: "Minecraft",
-    img: 'Igm\Minecraft.png',
-    description: "Продається ліцензія на Minecraft",
-    type: "game",
-    price: 13.37
-},
+        id: 1,
+        name: "Minecraft",
+        img: 'Igm/minecraft.png',
+        description: "Продається ліцензія на Minecraft",
+        type: "game",
+        price: 13.37
+    },
     {
         id: 2,
         name: "FIFA 26",
-        img: 'Igm\fifa26.jpg',
+        img: 'Igm/fifa26.jpg',
         description: "Продається ліцензія на FIFA 26",
         type: "game",
-        price: 29.99
+        price: 25.79
     },
-]; 
+    {
+        id: 3,
+        name: "S.T.A.L.K.E.R.2.",
+        img: 'Igm/S.T.A.L.K.E.R.2.png',
+        description: "Продається гра S.T.A.L.K.E.R.2.",
+        type: "game",
+        price: 18.67
+    },
+    {
+        id: 4,
+        name: "Zaregai 2",
+        img: 'Zaregai 2.png',
+        description: "Продається гра Zaregai 2",
+        type: "game",
+        price: 13.67
+    },
+    {
+        id: 5,
+        name: "robux",
+        img: 'robux.png',
+        description: "Продаються робукси для Roblox",
+        type: "donate",
+        price: 4.99
+    }
+];
 let cart = [];
 let productsContainer = document.querySelector('.products-div');
 let btnGroup = document.querySelector('.btn-group');
@@ -24,20 +48,69 @@ let btnGroup = document.querySelector('.btn-group');
 function renderProducts(items) {
     productsContainer.innerHTML = ''
     if (items.length === 0) {
-        productsContainer.innerHTML = '<p>netu</p>';
+        productsContainer.innerHTML = '<p>Товарів не знайдено</p>';
         return;
     }
     items.forEach(function(item) {
         let productHTML = `
-            <article class="product" data-category="${item.type}">
+            <article class="product" data-id="${item.id}">
                 <img src='${item.img}' alt="${item.name}" class="product-img">
-                h3>${item.name}</h3>
-                <p class product-description">${item.description}</p>
-                <p class="product-price"> £ ${item.price}</p>
-                <button type="button" btn btn-primary">Бегом до кошика</button>
+                <h3>${item.name}</h3>
+                <p class="product-description">${item.description}</p>
+                <span class="price">£ ${item.price}</span>
+                <button type="button" class="btn btn-primary buy-button" data-id="${item.id}">Бегом до кошика</button>
             </article>
         `
         productsContainer.innerHTML += productHTML;
-        
     })
+    // Додаємо слухачів для кнопок "Купити"
+    document.querySelectorAll('.buy-button').forEach(button => {
+        button.addEventListener('click', function() {
+            addtoCart(this.getAttribute('data-id'));
+        });
+    });
 }
+
+function applyFilter(categoryType) {
+    if (categoryType === 'all') {
+        renderProducts(products);
+    } else {
+        let filteredProducts = products.filter(product => product.type === categoryType);
+        renderProducts(filteredProducts);
+    }
+}
+
+function addtoCart(productId) {
+    let product = products.find(item => item.id == productId);
+    if (product) {
+        cart.push(product);
+        alert('Товар "' + product.name + '" додано до кошика!');
+    }
+}
+
+let productsMap = {
+    'Всі': 'all',
+    'Ігри': 'game',
+    'Донати': 'donate',
+}
+
+function setupFilterButtons() {
+    for (let button of btnGroup.children) {
+        if (button.classList.contains('filter-button')) {
+            button.addEventListener('click', function() {
+                // Видаляємо активний клас зі всіх кнопок
+                document.querySelectorAll('.filter-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                // Додаємо активний клас до поточної кнопки
+                this.classList.add('active');
+                
+                let category = productsMap[button.innerHTML.trim()];
+                applyFilter(category);
+            });
+        }
+    }
+}
+
+renderProducts(products);
+setupFilterButtons();
