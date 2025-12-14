@@ -27,7 +27,7 @@ let products = [
     {
         id: 4,
         name: "Zaregai 2",
-        img: 'Zaregai 2.png',
+        img: 'Igm/Zaregai 2.png',
         description: "Продається гра Zaregai 2",
         type: "game",
         price: 13.67
@@ -35,13 +35,22 @@ let products = [
     {
         id: 5,
         name: "robux",
-        img: 'robux.png',
+        img: 'Igm/robux.png',
         description: "Продаються робукси для Roblox",
         type: "donate",
         price: 4.99
+    },
+    {
+        id: 6,
+        name: "metro 2033.png",
+        img: 'Igm/metro 2033.png',
+        description: "Продається гра metro 2033",
+        type: "game",
+        price: 16.50
     }
 ];
-let cart = [];
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let productsContainer = document.querySelector('.products-div');
 let btnGroup = document.querySelector('.btn-group');
 
@@ -83,7 +92,13 @@ function applyFilter(categoryType) {
 function addtoCart(productId) {
     let product = products.find(item => item.id == productId);
     if (product) {
-        cart.push(product);
+        let cartProduct = cart.find(item => item.id == productId);
+        if (cartProduct) {
+            cartProduct.quantity += 1;
+        } else {
+            cart.push({...product, quantity: 1});
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
         alert('Товар "' + product.name + '" додано до кошика!');
     }
 }
@@ -92,6 +107,7 @@ let productsMap = {
     'Всі': 'all',
     'Ігри': 'game',
     'Донати': 'donate',
+    'меми': 'meme'
 }
 
 function setupFilterButtons() {
