@@ -1,0 +1,51 @@
+
+[
+    {
+        "id": 1,
+        "name": "Minecraft",
+        "img": "Igm/minecraft.png",
+        "description": "Продається ліцензія на Minecraft",
+        "type": "game",
+        "price": 13.37
+    },
+    {
+        "id": 2,
+        "name": "FIFA 26",
+        "img": "Igm/fifa26.jpg",
+        "description": "Продається ліцензія на FIFA 26",
+        "type": "game",
+        "price": 25.79
+    },
+    {
+        "id": 3,
+        "name": "S.T.A.L.K.E.R.2.",
+        "img": "Igm/S.T.A.L.K.E.R.2.png",
+        "description": "Продається гра S.T.A.L.K.E.R.2.",
+        "type": "game",
+        "price": 18.67
+    },
+    {
+        "id": 4,
+        "name": "Zaregai 2",
+        "img": "Igm/Zaregai 2.png",
+        "description": "Продається гра Zaregai 2",
+        "type": "game",
+        "price": 13.67
+    },
+    {
+        "id": 5,
+        "name": "robux",
+        "img": "Igm/robux.png",
+        "description": "Продаються робукси для Roblox",
+        "type": "donate",
+        "price": 4.99
+    },
+    {
+        "id": 6,
+        "name": "metro 2033.png",
+        "img": "Igm/metro 2033.png",
+        "description": "Продається гра metro 2033",
+        "type": "game",
+        "price": 16.50
+    }
+]
