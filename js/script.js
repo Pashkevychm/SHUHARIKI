@@ -34,20 +34,60 @@ let products = [
     },
     {
         "id": 5,
-        "name": "robux",
+        "name": "Robux",
         "img": "Igm/robux.png",
-        "description": "Продаються робукси для Roblox",
+        "description": "Продаються робукси 400 штук",
         "type": "donate",
         "price": 4.99
     },
     {
         "id": 6,
-        "name": "metro 2033.png",
+        "name": "Robux",
+        "img": "Igm/robux.png",
+        "description": "Продаються робукси 800 штук",
+        "type": "donate",
+        "price": 9.99
+    },
+    {
+        "id": 7,
+        "name": "Robux",
+        "img": "Igm/robux.png",
+        "description": "Продаються робукси 1500 штук",
+        "type": "donate",
+        "price": 14.99
+    },
+    {
+        "id": 8,
+        "name": "Robux",
+        "img": "Igm/robux.png",
+        "description": "Продаються робукси 4500 штук",
+        "type": "donate",
+        "price": 25.99
+    },
+    {
+        "id": 9,
+        "name": "Metro 2033",
         "img": "Igm/metro 2033.png",
         "description": "Продається гра metro 2033",
         "type": "game",
         "price": 16.50
-    }
+    },
+    {
+        "id": 10,
+        "name": "Prime CS2",
+        "img": "Igm/завантаження (7).png",
+        "description": "Прайм для помойки 2",
+        "type": "donate",
+        "price": 13.38
+    },
+    {
+        "id": 10,
+        "name": "Ultimate FC 26",
+        "img": "Igm/Untitled (1).png",
+        "description": "Ультимативний пакет для FIFA 26, создай свій драфт мрії!",
+        "type": "donate",
+        "price": 26.56
+    },
 ]
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
